@@ -11,20 +11,38 @@
 
 $fontSize: 10px;
 $fontFamily : segeo ui light;
-$width : 100px;
-$height: 100px;
+$width : 200px;
+$height: 200px;
 $fontWeight: 700;
+$black : black;
+$direction : ltr;
+$left : left;
+$right : right;
+
+    @if $direction == ltr {
+        $left :left;
+        $right: right;
+    } @else {
+
+        $left: right;
+        $right: left;
+
+    }
+
+
+
 
 // dry donot repeat your self'
 
 @import 'colors.scss';
 @import '_spacing.scss';
 
-// .common {
-//     width: $width;
-//     height: $height;
-//     background-color: $color;
-// }
+.common {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    color: $black;
+}
 .parent {
     // 1 to 5
     // @for $i from 1 to 6 
@@ -96,4 +114,15 @@ button {
 
 p {
     text-shadow: 1px 1px $mainColor;
+}
+
+
+.one{
+    @extend .common;
+    float: $left;
+}
+.two {
+    @extend .common;
+    background-color: #09C;
+    float: $right;
 }
