@@ -1,0 +1,80 @@
+//1- variables
+//2- nesting at scss
+//3- @ rules
+//4- @ extend class name
+//5- @ import files
+//6- @for
+//7- @if
+//8- @mixin
+
+
+
+$fontSize: 10px;
+$fontFamily : segeo ui light;
+$width : 200px;
+$height: 200px;
+$fontWeight: 700;
+
+// dry donot repeat your self'
+
+@import 'colors.scss';
+@import '_spacing.scss';
+
+.common {
+    width: $width;
+    height: $height;
+    background-color: $color;
+}
+.parent {
+    @extend .common;
+    &:hover {
+        color: #09c;
+    }
+
+    font: {
+        size: 10px;
+        weight: 700;
+    }
+    
+
+    background-color: $color;
+
+    .child1 {
+        background-color: $mainColor;
+
+        &:hover {
+            background-color: $mainColor;
+        }
+    }
+
+    .child2 {
+        background-color: $color;
+
+        .child3 {
+            background-color: $mainColor;
+        }
+    }
+}
+
+
+
+
+
+div {
+    color: $mainColor;
+    width: $width;
+    height: $height;
+    font-weight: $fontWeight;
+}
+
+h1 {
+    color: $mainColor;
+}
+
+button {
+    border: 1px solid $mainColor;
+}
+
+p {
+    text-shadow: 1px 1px $mainColor;
+}

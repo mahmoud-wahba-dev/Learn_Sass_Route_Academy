@@ -1,0 +1,45 @@
+.common, .parent {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.parent {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: red;
+}
+.parent:hover {
+  color: #09c;
+}
+.parent .child1 {
+  background-color: #09c;
+}
+.parent .child1:hover {
+  background-color: #09c;
+}
+.parent .child2 {
+  background-color: red;
+}
+.parent .child2 .child3 {
+  background-color: #09c;
+}
+
+div {
+  color: #09c;
+  width: 200px;
+  height: 200px;
+  font-weight: 700;
+}
+
+h1 {
+  color: #09c;
+}
+
+button {
+  border: 1px solid #09c;
+}
+
+p {
+  text-shadow: 1px 1px #09c;
+}/*# sourceMappingURL=style.css.map */
