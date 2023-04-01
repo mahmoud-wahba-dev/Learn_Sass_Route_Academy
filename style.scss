@@ -7,12 +7,12 @@
 //7- @if
 //8- @mixin
 
-
+ 
 
 $fontSize: 10px;
 $fontFamily : segeo ui light;
-$width : 200px;
-$height: 200px;
+$width : 100px;
+$height: 100px;
 $fontWeight: 700;
 
 // dry donot repeat your self'
@@ -20,13 +20,32 @@ $fontWeight: 700;
 @import 'colors.scss';
 @import '_spacing.scss';
 
-.common {
-    width: $width;
-    height: $height;
-    background-color: $color;
-}
+// .common {
+//     width: $width;
+//     height: $height;
+//     background-color: $color;
+// }
 .parent {
-    @extend .common;
+    // 1 to 5
+    // @for $i from 1 to 6 
+    // {
+
+    // }
+    
+    // 1 to 5
+    @for $i from 1 through 5 {
+        .child#{$i}{
+            background-color: rgba(2 * $i, 3 * $i, 4 * $i, 1/$i);
+            width: $width * $i;
+            
+        }
+    }
+
+
+
+
+    
+    // @extend .common;
     &:hover {
         color: #09c;
     }
@@ -39,21 +58,21 @@ $fontWeight: 700;
 
     background-color: $color;
 
-    .child1 {
-        background-color: $mainColor;
+    // .child1 {
+    //     background-color: $mainColor;
 
-        &:hover {
-            background-color: $mainColor;
-        }
-    }
+    //     &:hover {
+    //         background-color: $mainColor;
+    //     }
+    // }
 
-    .child2 {
-        background-color: $color;
+    // .child2 {
+    //     background-color: $color;
 
-        .child3 {
-            background-color: $mainColor;
-        }
-    }
+    //     .child3 {
+    //         background-color: $mainColor;
+    //     }
+    // }
 }
 
 

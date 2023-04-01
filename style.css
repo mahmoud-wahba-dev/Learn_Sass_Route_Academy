@@ -1,34 +1,36 @@
-.common, .parent {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-}
-
 .parent {
   font-size: 10px;
   font-weight: 700;
   background-color: red;
 }
-.parent:hover {
-  color: #09c;
-}
 .parent .child1 {
-  background-color: #09c;
-}
-.parent .child1:hover {
-  background-color: #09c;
+  background-color: rgb(2, 3, 4);
+  width: 100px;
 }
 .parent .child2 {
-  background-color: red;
+  background-color: rgba(4, 6, 8, 0.5);
+  width: 200px;
 }
-.parent .child2 .child3 {
-  background-color: #09c;
+.parent .child3 {
+  background-color: rgba(6, 9, 12, 0.3333333333);
+  width: 300px;
+}
+.parent .child4 {
+  background-color: rgba(8, 12, 16, 0.25);
+  width: 400px;
+}
+.parent .child5 {
+  background-color: rgba(10, 15, 20, 0.2);
+  width: 500px;
+}
+.parent:hover {
+  color: #09c;
 }
 
 div {
   color: #09c;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   font-weight: 700;
 }
 
