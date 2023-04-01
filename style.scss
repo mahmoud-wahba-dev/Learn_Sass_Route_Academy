@@ -7,7 +7,7 @@
 //7- @if
 //8- @mixin
 
- 
+
 
 $fontSize: 10px;
 $fontFamily : segeo ui light;
@@ -19,15 +19,17 @@ $direction : ltr;
 $left : left;
 $right : right;
 
-    @if $direction == ltr {
-        $left :left;
-        $right: right;
-    } @else {
+@if $direction ==ltr {
+    $left : left;
+    $right: right;
+}
 
-        $left: right;
-        $right: left;
+@else {
 
-    }
+    $left: right;
+    $right: left;
+
+}
 
 
 
@@ -43,26 +45,28 @@ $right : right;
     background-color: $color;
     color: $black;
 }
+
 .parent {
     // 1 to 5
     // @for $i from 1 to 6 
     // {
 
     // }
-    
+
     // 1 to 5
-    @for $i from 1 through 5 {
-        .child#{$i}{
-            background-color: rgba(2 * $i, 3 * $i, 4 * $i, 1/$i);
-            width: $width * $i;
-            
-        }
-    }
+    // @for $i from 1 through 5 {
+    //     .child#{$i} {
+    //         // background-color: rgba($i, $i, $i, $i);
+    //         // width: $width * $i;
+
+    //     }
+
+    // }
 
 
 
 
-    
+
     // @extend .common;
     &:hover {
         color: #09c;
@@ -72,7 +76,7 @@ $right : right;
         size: 10px;
         weight: 700;
     }
-    
+
 
     background-color: $color;
 
@@ -116,13 +120,23 @@ p {
     text-shadow: 1px 1px $mainColor;
 }
 
+@mixin boxShadow($x, $y, $b, $c) {
+    --webkit-box-shadow: $x $y $b $c;
+    --moz-box-shadow: $x $y $b $c;
+    --o-box-shadow: $x $y $b $c;
+    --ms-box-shadow: $x $y $b $c;
+    box-shadow: $x $y $b $c;
+}
 
-.one{
+.one {
     @extend .common;
     float: $left;
+    @include boxShadow(10px, 10px, 30px, green)
 }
+
 .two {
     @extend .common;
     background-color: #09C;
     float: $right;
+    @include boxShadow(20px, 20px, 10px, gray);
 }
